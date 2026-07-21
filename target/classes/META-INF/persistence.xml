@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="3.0"
+    xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        https://jakarta.ee/xml/ns/persistence
+        https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <persistence-unit name="MakeWebNowPU" transaction-type="RESOURCE_LOCAL">
+
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <class>entity.Role</class>
+        <class>entity.Subscription</class>
+        <class>entity.User</class>
+        <class>entity.Template</class>
+        <class>entity.Website</class>
+        <class>entity.Block</class>
+        <class>entity.Payment</class>
+        <class>entity.TemplateKeyword</class>
+        <class>entity.Backup</class>
+        <class>entity.SystemLog</class>
+        <class>entity.Permission</class>
+
+        <properties>
+
+            <property name="jakarta.persistence.jdbc.driver"
+                value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+
+            <property name="jakarta.persistence.jdbc.url"
+                value="jdbc:sqlserver://localhost:1433;
+                databaseName=MakeWebNowDB;
+                encrypt=true;
+                trustServerCertificate=true"/>
+
+            <property name="jakarta.persistence.jdbc.user"
+                value="sa"/>
+
+            <property name="jakarta.persistence.jdbc.password"
+                value="Linhthon1308#"/>
+
+            <property name="hibernate.dialect"
+                value="org.hibernate.dialect.SQLServerDialect"/>
+
+            <property name="hibernate.show_sql"
+                value="true"/>
+
+            <property name="hibernate.format_sql"
+                value="true"/>
+
+            <property name="hibernate.hbm2ddl.auto"
+                value="none"/>
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
