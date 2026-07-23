@@ -36,37 +36,84 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <div class="toolbar">
 
-    <div class="logo">
-         Make Web Now
+    <div class="d-flex align-items-center">
+
+        <button id="btnDashboard"
+                class="btn btn-home"
+                title="Trang chủ">
+
+            <i class="fa-solid fa-house"></i>
+
+        </button>
+
+        <div class="logo ms-3">
+
+            <i class="fa-solid fa-code"></i>
+
+            Make Web Now
+
+        </div>
+		<span id="saveStatus"
+      class="ms-3 text-muted">
+
+Chưa lưu
+
+</span>
     </div>
 
     <div>
-<a href="#" id="btnDashboard"
+<button id="btnUndo"
+        class="btn btn-outline-secondary">
 
-   class="btn btn-outline-secondary">
+    <i class="fa-solid fa-rotate-left"></i>
 
-    <i class="fa-solid fa-arrow-left"></i>
+</button>
 
-    Dashboard
+<button id="btnRedo"
+        class="btn btn-outline-secondary">
 
-</a>
+    <i class="fa-solid fa-rotate-right"></i>
+
+</button>
         <button class="btn btn-save" id="btnSave">
+
             <i class="fa-solid fa-floppy-disk"></i>
+
             Lưu
+
         </button>
 
-        <button class="btn btn-preview">
-            <i class="fa-solid fa-eye"></i>
-            Preview
-        </button>
+        <div class="btn-group">
+
+    <button class="btn btn-preview"
+            id="btnPreviewDesktop">
+
+        <i class="fa-solid fa-desktop"></i>
+
+    </button>
+
+    <button class="btn btn-preview"
+            id="btnPreviewTablet">
+
+        <i class="fa-solid fa-tablet-screen-button"></i>
+
+    </button>
+
+    <button class="btn btn-preview"
+            id="btnPreviewMobile">
+
+        <i class="fa-solid fa-mobile-screen-button"></i>
+
+    </button>
+
+</div>
 
         <button class="btn btn-download">
-            <i class="fa-solid fa-download"></i>
-            Tải về
-        </button>
 
-        <button class="btn btn-ai">
-             AI Layout
+            <i class="fa-solid fa-download"></i>
+
+            Download
+
         </button>
 
         <a href="${pageContext.request.contextPath}/logout"
@@ -86,31 +133,63 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
     <!-- LEFT -->
 
-    <div class="sidebar">
+   <div class="sidebar">
 
-        <h5>Blocks</h5>
+    <h5 class="sidebar-title">
 
-        <div class="block-item" draggable="true">
-            Header
-        </div>
+        <i class="fa-solid fa-cubes"></i>
 
-        <div class="block-item" draggable="true">
-            Text
-        </div>
+        Blocks
 
-        <div class="block-item" draggable="true">
-            Button
-        </div>
+    </h5>
 
-        <div class="block-item" draggable="true">
-            Image
-        </div>
+    <div class="block-category">
 
-        <div class="block-item" draggable="true">
-            Footer
-        </div>
+        Basic
 
     </div>
+
+    <div class="block-item" draggable="true">
+
+        <i class="fa-solid fa-heading"></i>
+
+        Header
+
+    </div>
+
+    <div class="block-item" draggable="true">
+
+        <i class="fa-solid fa-align-left"></i>
+
+        Text
+
+    </div>
+
+    <div class="block-item" draggable="true">
+
+        <i class="fa-solid fa-square"></i>
+
+        Button
+
+    </div>
+
+    <div class="block-item" draggable="true">
+
+        <i class="fa-regular fa-image"></i>
+
+        Image
+
+    </div>
+
+    <div class="block-item" draggable="true">
+
+        <i class="fa-solid fa-window-maximize"></i>
+
+        Footer
+
+    </div>
+
+</div>
 
     <!-- CENTER -->
 

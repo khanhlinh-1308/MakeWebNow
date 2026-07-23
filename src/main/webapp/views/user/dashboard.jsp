@@ -1,8 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page import="entity.User"%>
+<%@ page import="entity.Website"%>
+<%@ page import="java.util.List"%>
 
 <%
 User user = (User) session.getAttribute("user");
+
+List<Website> websites =
+(List<Website>) request.getAttribute("websites");
 %>
 
 <!DOCTYPE html>
@@ -103,72 +108,80 @@ Kéo thả Block như Scratch và tạo website chỉ trong vài phút.
 
 <h3 class="mt-5 mb-4">
 
-Template nổi bật
+Website của bạn
 
 </h3>
 
+<%
+if(websites == null || websites.isEmpty()){
+%>
+
+<div class="alert alert-light border">
+
+    Bạn chưa tạo website nào.
+
+</div>
+
+<%
+}else{
+%>
+
 <div class="row">
 
-<div class="col-md-3">
+<%
+for(Website w : websites){
+%>
 
-<div class="template-card">
+<div class="col-md-4 mb-4">
 
-<img src="https://placehold.co/400x240"
+    <div class="card shadow-sm h-100">
 
-class="img-fluid">
+        <div class="card-body">
 
-<h5>Portfolio</h5>
+            <h5>
 
-</div>
+                <%= w.getWebsiteName() %>
 
-</div>
+            </h5>
 
-<div class="col-md-3">
+            <p class="text-muted">
 
-<div class="template-card">
+                <%= w.getDescription() %>
 
-<img src="https://placehold.co/400x240"
+            </p>
 
-class="img-fluid">
+            <small class="text-secondary">
 
-<h5>Landing Page</h5>
+                Lưu lần cuối:
+                <%= w.getLastSaved() %>
 
-</div>
+            </small>
 
-</div>
+            <br><br>
 
-<div class="col-md-3">
+            <a href="${pageContext.request.contextPath}/editor?websiteID=<%=w.getWebsiteID()%>"
 
-<div class="template-card">
+               class="btn btn-primary">
 
-<img src="https://placehold.co/400x240"
+                Chỉnh sửa
 
-class="img-fluid">
+            </a>
 
-<h5>Shop</h5>
+        </div>
 
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="template-card">
-
-<img src="https://placehold.co/400x240"
-
-class="img-fluid">
-
-<h5>Blog</h5>
+    </div>
 
 </div>
 
-</div>
+<%
+}
+%>
 
 </div>
 
-</div>
-
+<%
+}
+%>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
